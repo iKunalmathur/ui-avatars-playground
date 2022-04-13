@@ -47,20 +47,16 @@ const index = () => {
   });
 
   const url = `https://ui-avatars.com/api/?${
-    background.isSet
-      ? "background=" + background.value.substring(1, background.value.length)
-      : ""
-  }${
-    color.isSet ? "&color=" + color.value.substring(1, color.value.length) : ""
-  }${name.isSet ? "&name=" + name.value : ""}${
-    length.isSet ? "&length=" + length.value : ""
-  }${size.isSet ? "&size=" + size.value : ""}${
-    fontSize.isSet ? "&font-size=" + fontSize.value : ""
-  }${rounded.isSet ? "&rounded=" + rounded.value : ""}${
-    bold.isSet ? "&bold=" + bold.value : ""
-  }${uppercase.isSet ? "&uppercase=" + uppercase.value : ""}${
-    format.isSet ? "&format=" + format.value : ""
-  }`;
+    background.isSet ? "background=" + background.value.replace(/#/g, "") : ""
+  }${color.isSet ? "&color=" + color.value.replace(/#/g, "") : ""}${
+    name.isSet ? "&name=" + name.value : ""
+  }${length.isSet ? "&length=" + length.value : ""}${
+    size.isSet ? "&size=" + size.value : ""
+  }${fontSize.isSet ? "&font-size=" + fontSize.value : ""}${
+    rounded.isSet ? "&rounded=" + rounded.value : ""
+  }${bold.isSet ? "&bold=" + bold.value : ""}${
+    uppercase.isSet ? "&uppercase=" + uppercase.value : ""
+  }${format.isSet ? "&format=" + format.value : ""}`;
 
   return (
     <div className="container mx-auto max-w-5xl px-4 flex flex-col justify-between min-h-screen">
@@ -149,7 +145,7 @@ const index = () => {
         <div className={`grid grid-cols-1 md:grid-cols-2 gap-4 ${splitMode}`}>
           {/* background */}
           <div className="flex flex-col gap-2">
-            <label className="flex items-center">
+            <label className="flex items-center w-max">
               <input
                 type="checkbox"
                 checked={background.isSet}
@@ -187,7 +183,7 @@ const index = () => {
           </div>
           {/* color */}
           <div className="flex flex-col gap-2">
-            <label className="flex items-center">
+            <label className="flex items-center w-max">
               <input
                 type="checkbox"
                 checked={color.isSet}
@@ -225,7 +221,7 @@ const index = () => {
           </div>
           {/* name */}
           <div className="flex flex-col gap-2">
-            <label className="flex items-center">
+            <label className="flex items-center w-max">
               <input
                 type="checkbox"
                 checked={name.isSet}
@@ -252,7 +248,7 @@ const index = () => {
           </div>
           {/* length */}
           <div className="flex flex-col gap-2">
-            <label className="flex items-center">
+            <label className="flex items-center w-max">
               <input
                 type="checkbox"
                 checked={length.isSet}
@@ -279,7 +275,7 @@ const index = () => {
           </div>
           {/* size */}
           <div className="flex flex-col gap-2">
-            <label className="flex items-center">
+            <label className="flex items-center w-max">
               <input
                 type="checkbox"
                 checked={size.isSet}
@@ -306,7 +302,7 @@ const index = () => {
           </div>
           {/* fontSize */}
           <div className="flex flex-col gap-2">
-            <label className="flex items-center">
+            <label className="flex items-center w-max">
               <input
                 type="checkbox"
                 checked={fontSize.isSet}
@@ -333,7 +329,7 @@ const index = () => {
           </div>
           {/* format */}
           <div className="flex flex-col gap-2">
-            <label className="flex items-center">
+            <label className="flex items-center w-max">
               <input
                 type="checkbox"
                 checked={format.isSet}
@@ -360,7 +356,7 @@ const index = () => {
           </div>
           {/* bold */}
           <div className="flex flex-col gap-2">
-            <label className="flex items-center">
+            <label className="flex items-center w-max">
               <input
                 type="checkbox"
                 checked={bold.isSet}
@@ -387,7 +383,7 @@ const index = () => {
           </div>
           {/* rounded */}
           <div className="flex flex-col gap-2">
-            <label className="flex items-center">
+            <label className="flex items-center w-max">
               <input
                 type="checkbox"
                 checked={rounded.isSet}
@@ -414,7 +410,7 @@ const index = () => {
           </div>
           {/* uppercase */}
           <div className="flex flex-col gap-2">
-            <label className="flex items-center">
+            <label className="flex items-center w-max">
               <input
                 type="checkbox"
                 checked={uppercase.isSet}
