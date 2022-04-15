@@ -1,5 +1,5 @@
+import Seo from "../components/Seo";
 import "../styles/globals.css";
-import Seo from "../components/SEO";
 
 function MyApp({ Component, pageProps }) {
   return (
