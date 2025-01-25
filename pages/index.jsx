@@ -7,7 +7,7 @@ const index = () => {
 
   const [background, setBackground] = React.useState({
     isSet: true,
-    value: "#0D8ABC",
+    value: "#34D399",
   });
   const [color, setColor] = React.useState({
     isSet: false,
